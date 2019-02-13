@@ -10,3 +10,9 @@ a{
 p{
   text-align: center;
 }
+
+table, th, tr, td{
+  margin:0px auto;
+  border:1px solid black;
+  padding:5px;
+}
