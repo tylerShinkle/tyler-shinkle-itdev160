@@ -1,3 +1,8 @@
+body{
+  background-color: 	rgb(200,220,230);
+}
+
+/*Main header on top of page*/
 header h1{
   text-align: center;
   font-family: 'Quicksand', sans-serif;
@@ -11,6 +16,7 @@ header nav{
   text-align: center;
 }
 
+/*navbar*/
 header nav h3{
   font-family: 'Quicksand', sans-serif;
   display: inline-block;
@@ -19,11 +25,53 @@ header nav h3{
   font-size: 1.25em;
 }
 
+/*keep those links red*/
 .activePage{
   color: red;
 }
 
+
 a{
   text-decoration: none;
   color: black;
+}
+
+a:hover{
+  color: hsla(0, 100%, 30%, 0.45);
+}
+
+a:active{
+    color:	#FF0000;
+}
+
+/*keep that footer visible and on the bottom, center content in this.*/
+#footerWrapper{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+footer h5{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: .9em;
+  letter-spacing: .0125em;
+}
+
+
+.mediaLink{
+  width:1.5em;
+  height:auto;
+  margin:.25em .55em 0 .55em;
+}
+
+#twitter{
+  width:1.7em;
+}
+
+#instagram{
+  width:1.42em;
 }
