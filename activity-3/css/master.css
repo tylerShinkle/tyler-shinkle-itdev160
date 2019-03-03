@@ -6,13 +6,24 @@ header h1{
   margin: 1em 0em 1em 0em;
   font-size: 2em;
 }
+
 header nav{
   text-align: center;
 }
+
 header nav h3{
   font-family: 'Quicksand', sans-serif;
   display: inline-block;
   margin:0em 0.5em 0.5em 0.25em;
   letter-spacing: 0.025em;
   font-size: 1.25em;
+}
+
+.activePage{
+  color: red;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }
