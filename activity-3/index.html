@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
+<!-- study hos to use float such that text wraps around images, no time now.-->
 <html lang="en">
 
   <head>
 
-      <title>shinkleReview</title>
+      <title>shinkleReview | Reviews</title>
 
       <meta charset="utf-8">
 
@@ -20,19 +22,77 @@
     <header>
         <h1>shinkleReview</h1>
         <nav>
-          <h3><a class="activePage" href="index.html">Home</a></h3>
-          <h3><a href="reviews.html">Reviews</a></h3>
+          <h3><a class="activePage" href="index.html">Reviews</a></h3>
+          <h3><a href="reviews.html">Products</a></h3>
           <h3><a href="contact.html">Contact</a></h3>
         </nav>
     </header>
 
     <main>
-      <h3>This website has useful reviews of useful products.</h3>
+      <div class="reviewWrapper">
+        <!--iPhone SE-->
+        <div id="iPhone">
+            <h4>iphone SE</h4>
+            <figure>
+              <img src="images/iphone.jpg" alt="iPhone SE" class="a_Test">
+              <figcaption>An OK cell phone.</figcaption>
+            </figure>
+            <p>
+              Description &nbsp; : &nbsp; A small, moderately powerful phone that is easy to use.
+            </p>
+
+            <p>
+              Pros &nbsp; : &nbsp; Durable, small and easy to use with a decent battery life and decent price point.
+            </p>
+
+            <p>
+              Cons &nbsp; : &nbsp; The screen is quite small making it somewhat difficult to use for those who have bigger / clumsier fingers.
+            </p>
+
+        </div>
+
+        <div id="hondaAccord">
+            <h4>2005 Honda Acoord</h4>
+            <figure>
+              <img src="images/accord.jpg" alt="2005 Honda Accord" class="b_test">
+            <figcaption>A decent car.</figcaption>
+            </figure>
+            <p>
+              Description &nbsp; : &nbsp;A fairly reliable car with mid-range fuel economy and decent handling.
+            </p>
+            <p>
+              Pros &nbsp; : &nbsp; Smooth ride, quite stylish and decent fuel economy.
+            </p>
+            <p>
+              Cons &nbsp; : &nbsp; Not great in snow, cheap interior and headlight issues.
+            </p>
+        </div>
+
+        <div id="htmlBook">
+            <h4>HTML & CSS by Jon Duckett</h4>
+            <figure>
+              <img src="images/html.jpg" alt="HTML & CSS by Jon Duckett" title="c_test">
+            <figcaption>A good book.</figcaption>
+            </figure>
+            <p>
+              Description &nbsp; : &nbsp; A useful book that is good to teach beginners or act as a reference for pros.
+            </p>
+
+            <p>
+              Pros &nbsp; : &nbsp; Well made with quality materials and impecciably designed as far as typography / layout.
+            </p>
+
+            <p>
+              Cons &nbsp; : &nbsp; Extremeley minimalistic descriptions of topics and exercises.
+            </p>
+        </div>
+
+      </div>
     </main>
 
     <div id="footerWrapper">
       <footer>
-        <!--links to login page as this is not a real site-->
+        <!--links don't work, just practicing -->
         <img  id="twitter"   class='mediaLink' src='images/twitterLogo.png' alt="twitter logo">
         <img  id="facebook"  class='mediaLink' src="images/faceBookLogo.png" alt="facebook logo">
         <img  id="instagram" class='mediaLink' src="images/instaLogo.png" alt="instagram logo">

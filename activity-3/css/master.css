@@ -1,3 +1,12 @@
+/* 3/3 toDo
+attribute selector check
+product images check
+  figure element got it
+  figurecaption got it
+  image sizes got it
+  prodcut description with 3
+  phony reviews
+*/
 body{
   background-color: 	rgb(200,220,230);
 }
@@ -9,7 +18,7 @@ header h1{
   letter-spacing: 0.125em;
   font-weight: bold;
   margin: .5em .5em .5em .5em;
-  font-size: 3em;
+  font-size: 2.5em;
   border: 5px solid 	hsl(0, 80%, 70%);
   padding: .125em;
   line-height:2em;
@@ -34,7 +43,7 @@ header nav h3{
   display: inline-block;
   margin:0em 0.5em 0.5em 0.25em;
   letter-spacing: 0.025em;
-  font-size: 2.25em;
+  font-size: 1.75em;
 }
 
 /*keep those links red*/
@@ -63,13 +72,13 @@ a:active{
   left:0;
   width: 100%;
   text-align: center;
-  margin-bottom: 1em;
+  background-color: hsl(0, 80%, 70%) ;
 }
 
 footer h5{
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1em;
   letter-spacing: .0125em;
   line-height: 0em;
   word-spacing: .25em;
@@ -92,13 +101,35 @@ footer h5{
 
 main{
   font-family: 'Quicksand',sans-serif;
-  font-size:2em;
+  font-size:1em;
   text-align: center;
   padding-top:4em;
+  margin-bottom: 10em;
 }
 
-main::first-letter{
-  font-size:2.5em;
+main h3::first-letter{
+  font-size:1.5em;
   vertical-align: baseline;
   color: hsl(0, 80%, 70%);
+}
+
+[class$="Test"] {
+  width:15em;
+  height: auto;
+}
+
+
+.reviewWrapper p {
+  position: relative;
+}
+
+.reviewWrapper p::first-letter{
+  font-weight:bold;
+  color:hsl(0,80%,70%);
+}
+
+.reviewWrapper p{
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
 }
