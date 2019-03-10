@@ -1,0 +1,149 @@
+/* 3/3 toDo
+attribute selector check
+product images check
+  figure element got it
+  figurecaption got it
+  image sizes got it
+  prodcut description with 3
+  phony reviews
+*/
+body{
+  background-color: 	rgb(200,220,230);
+}
+
+/*Main header on top of page*/
+header h1{
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.125em;
+  font-weight: bold;
+  margin: .5em .5em .5em .5em;
+  font-size: 2.5em;
+  border: 5px solid 	hsl(0, 80%, 70%);
+  padding: .125em;
+  line-height:2em;
+}
+
+header nav h3::after,header nav h3::before,header h1::after, header h1::before{
+  content:"-";
+}
+
+
+header nav h3::first-letter{
+  font-weight:lighter;
+}
+
+header nav{
+  text-align: center;
+}
+
+/*navbar*/
+header nav h3{
+  font-family: 'Quicksand', sans-serif;
+  display: inline-block;
+  margin:0em 0.5em 0.5em 0.25em;
+  letter-spacing: 0.025em;
+  font-size: 1.75em;
+}
+
+/*keep those links red*/
+.activePage{
+  color: hsl(0, 80%, 70%);
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: hsla(0, 70%, 70%, .5);
+}
+
+a:active{
+    color:	#FF0000;
+}
+
+/*keep that footer visible and on the bottom, center content in this.*/
+#footerWrapper{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  background-color: hsl(0, 80%, 70%) ;
+}
+
+footer h5{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: .0125em;
+  line-height: 0em;
+  word-spacing: .25em;
+}
+
+
+.mediaLink{
+  width:2.5em;
+  height:auto;
+  margin:.25em .55em 0 .55em;
+}
+
+#twitter{
+  width:2.7em;
+}
+
+#instagram{
+  width:2.42em;
+}
+
+main{
+  font-family: 'Quicksand',sans-serif;
+  font-size:1em;
+  text-align: center;
+  padding-top:4em;
+  margin-bottom: 10em;
+}
+
+main h3::first-letter{
+  font-size:1.5em;
+  vertical-align: baseline;
+  color: hsl(0, 80%, 70%);
+}
+
+
+/*img size set here*/
+[class$="Test"] {
+  width:15em;
+  height: auto;
+}
+
+
+.reviewWrapper p {
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+}
+
+.reviewWrapper p::first-letter{
+  font-weight:bold;
+  color:hsl(0,80%,70%);
+}
+
+.reviewWrapper{
+  text-align: center;
+  width:50em;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#iPhone , #hondaAccord, #htmlBook{
+  margin-bottom: 5em;
+  width:100%;
+  display: inline-block;
+  letter-spacing: .0125em;
+}
