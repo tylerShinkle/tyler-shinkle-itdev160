@@ -42,3 +42,5 @@ var bookStudentPriceElement=document.getElementById('bookStudentPrice');
 bookPriceElement.textContent=" $"+bookPrice;
 bookStudentPriceElement.textContent=" $"+bookStudentPrice;
 //book done
+
+// figure out how to script a several page site with one page.
