@@ -29,13 +29,24 @@ displays color over hex
 
 <body>
 
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlayContent">
+      <p><a href=#packageOne>gitPlus</a></p>
+      <p><a href="#packageTwo">beautify</a></p>
+      <p><a href="#packageThree">pigments</a></p>
+    </div>
+  </div>
+
   <div class="pageContainer">
 
     <nav>
       <img src="images/logo.png" alt="shopify logo">
       <p id=bold>shopify</p>
       <p id=italic>partners</p>
-      <img src="images/menu.png" alt="sandwich menu icon" id=menu>
+      <a href="#">
+        <img src="images/menu.png" alt="sandwich menu icon" id=menu onclick="openNav()">
+      </a>
       <div id="navBar">
         <p><a href=#packageOne>gitPlus</a></p>
         <p><a href="#packageTwo">beautify</a></p>
@@ -59,6 +70,7 @@ displays color over hex
       <div id="heroImage">
 
       </div>
+      <p>To install packages open up Atom and hit "Ctrl" + "Shift" + "p" and type in install packages. </p>
     </header>
 
     <main>
