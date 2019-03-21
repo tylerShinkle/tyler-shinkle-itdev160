@@ -1,3 +1,12 @@
-body {
-  color: #ffffff;
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+header img {
+  width: 2em;
+  height: auto;
+}
+
+h2 {
+  text-align: center;
 }
