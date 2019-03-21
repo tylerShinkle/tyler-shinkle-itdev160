@@ -1,5 +1,5 @@
 //header info...
-var title = "The 3 Best Atom Packages for Front end Developers";
+var title = "The 3 Best Atom Packages for Front End Developers";
 var author = "by: Tyler Shinkle";
 var date = "3/21/2019";
 //new info for me...
@@ -37,33 +37,39 @@ var beautify = new Package("atom-beautify", "https://atom.io/packages/atom-beaut
 var pigments = new Package("Pigments", "https://atom.io/packages/pigments", "Pigments allows you to easily see how your hex codes will look.", "abe33", 2537742, 3601, "images/pigments.png");
 var packages = [gitPlus, beautify, pigments];
 
-var i;
 
-for (i = 0; i < packages.length; i++) {
-  var nameEl = document.getElementById('packageName' + (i + 1));
+for (var i = 0; i < packages.length; i++) {
+  var j = (i + 1);
+  var nameEl = document.getElementById('packageName' + j);
   var newA = document.createElement('a');
-  newA.textContent = (i + 1) + ". " + packages[i].name;
+  newA.textContent = j + ". " + packages[i].name;
   newA.href = packages[i].url;
   newA.target = "_blank";
   nameEl.appendChild(newA);
 
-  var descriptionEl = document.getElementById('packageDescription' + (i + 1));
+  var descriptionEl = document.getElementById('packageDescription' + j);
   descriptionEl.textContent = packages[i].description;
 
-  var authorEl2 = document.getElementById('packageAuthor' + (i + 1));
+  var authorEl2 = document.getElementById('packageAuthor' + j);
   authorEl2.textContent = "Author: " + packages[i].author + " ";
 
-  var downloadsEl = document.getElementById('packageDownloads' + (i + 1));
+  var downloadsEl = document.getElementById('packageDownloads' + j);
   downloadsEl.textContent = "Downloads: " + packages[i].downloads() + " ";
 
-  var starsEl = document.getElementById('packageStars' + (i + 1));
+  var starsEl = document.getElementById('packageStars' + j);
   starsEl.textContent = "Stars: " + packages[i].stars + " ";
 
   //https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
-  var imageEl = document.getElementById('packageImage' + (i + 1));
+  var imageEl = document.getElementById('packageImage' + j);
   var imageItself = document.createElement('img');
   imageItself.src = packages[i].image;
   imageEl.appendChild(imageItself);
 
+
+  var captionEl = document.createElement('p');
+  var textNode = document.createTextNode('This is a screenshot of ' + packages[i].name + " in action.");
+  captionEl.appendChild(textNode);
+  var position = document.getElementById('caption' + j);
+  position.appendChild(captionEl);
 };
