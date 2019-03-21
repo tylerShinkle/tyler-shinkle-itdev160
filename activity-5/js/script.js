@@ -24,14 +24,17 @@ function Package(name, url, description, author, downloads, stars, image) {
   this.url = url;
   this.description = description;
   this.author = author;
-  this.downloads = downloads;
   this.stars = stars;
   this.image = image;
-};
+  // setting this property to a function requres you to access the function by typing this.downloads();
+  this.downloads = function() {
+    return downloads.toLocaleString();
+  };
+}
 
-var gitPlus = new Package("Git-Plus", "https://atom.io/packages/git-plus", "Git-Plus allows you to seamlessly add, commit and push without the use of a terminal.", "akonwi", "2,411,693", 2568, "images/git.png");
-var beautify = new Package("atom-beautify", "https://atom.io/packages/atom-beautify", "The atom-beautify package allows you to clean up your code simply by saving it.", "Glavin001", "6,004,609", 5046, "images/beautify.png");
-var pigments = new Package("Pigments", "https://atom.io/packages/pigments", "Pigments allows you to easily see how your hex codes will look.", "abe33", "2,537,742", 3601, "images/pigments.png");
+var gitPlus = new Package("Git-Plus", "https://atom.io/packages/git-plus", "Git-Plus allows you to seamlessly add, commit and push without the use of a terminal.", "akonwi", 2411693, 2568, "images/git.png");
+var beautify = new Package("atom-beautify", "https://atom.io/packages/atom-beautify", "The atom-beautify package allows you to clean up your code simply by saving it.", "Glavin001", 6004609, 5046, "images/beautify.png");
+var pigments = new Package("Pigments", "https://atom.io/packages/pigments", "Pigments allows you to easily see how your hex codes will look.", "abe33", 2537742, 3601, "images/pigments.png");
 var packages = [gitPlus, beautify, pigments];
 
 var i;
@@ -51,7 +54,7 @@ for (i = 0; i < packages.length; i++) {
   authorEl2.textContent = "Author: " + packages[i].author + " ";
 
   var downloadsEl = document.getElementById('packageDownloads' + (i + 1));
-  downloadsEl.textContent = "Downloads: " + packages[i].downloads + " ";
+  downloadsEl.textContent = "Downloads: " + packages[i].downloads() + " ";
 
   var starsEl = document.getElementById('packageStars' + (i + 1));
   starsEl.textContent = "Stars: " + packages[i].stars + " ";
