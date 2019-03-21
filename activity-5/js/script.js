@@ -2,6 +2,7 @@
 var title = "The 3 Best Atom Packages for Front end Developers";
 var author = "by: Tyler Shinkle";
 var date = "3/21/2019";
+//new info for me...
 var heroImage = document.createElement('img');
 heroImage.src = "images/header.png";
 
@@ -14,6 +15,7 @@ var dateEl = document.getElementById('date');
 titleEl.textContent = title;
 authorEl.textContent = author;
 dateEl.textContent = date;
+//useful...
 heroImageEl.appendChild(heroImage);
 
 //Package info...
@@ -36,10 +38,11 @@ var i;
 
 for (i = 0; i < packages.length; i++) {
   var nameEl = document.getElementById('packageName' + (i + 1));
-  nameEl.textContent = packages[i].name;
-
-  var urlEl = document.getElementById('packageUrl' + (i + 1));
-  urlEl.textContent = packages[i].url;
+  var newA = document.createElement('a');
+  newA.textContent = (i + 1) + ". " + packages[i].name;
+  newA.href = packages[i].url;
+  newA.target = "_blank";
+  nameEl.appendChild(newA);
 
   var descriptionEl = document.getElementById('packageDescription' + (i + 1));
   descriptionEl.textContent = packages[i].description;
