@@ -1,9 +1,9 @@
 //header info...
-var title = "The 3 Best Atom Packages for Fron end Developers";
-var author = "Tyler Shinkle";
+var title = "The 3 Best Atom Packages for Front end Developers";
+var author = "by: Tyler Shinkle";
 var date = "3/21/2019";
 var heroImage = document.createElement('img');
-heroImage.src = "images/me.jpeg";
+heroImage.src = "images/header.png";
 var src = document.getElementById("heroImage");
 src.appendChild(heroImage);
 

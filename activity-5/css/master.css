@@ -1,12 +1,105 @@
 * {
   font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  padding: 0em;
+  margin: 0em;
 }
 
-header img {
-  width: 2em;
-  height: auto;
+body {
+  background: lightgrey;
+  padding: 0em;
 }
 
-h2 {
-  text-align: center;
+.pageContainer {
+  max-width: 1600px;
+  margin: auto;
+  background: white;
+  padding: 1em;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+}
+
+nav img {
+  width: 1.5em;
+  margin: .5em;
+  display: inline-block;
+  text-align: left;
+}
+
+nav p {
+  display: inline-block;
+  position: relative;
+  top: -.5em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#navBar {
+  border-top: .025em solid lightgrey;
+  border-bottom: .025em solid lightgrey;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+#navBar p {
+  position: static;
+  margin: .125em 1em .125em 1em;
+}
+
+#navBar a:hover {
+  opacity: .5;
+  border-bottom: .125em solid black;
+}
+
+#menu {
+  float: right;
+}
+
+#bold {
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#italic {
+  font-family: 'Cabin', sans-serif;
+  font-weight: italic;
+  font-size: 1.5em;
+  position: relative;
+  left: -.125em;
+}
+
+header {
+  width: 80%;
+  max-width: 1600px;
+  margin: 2em auto;
+  text-align: left;
+}
+
+#title {
+  font-size: 2em;
+}
+
+#author {
+  margin: 1em;
+}
+
+#date {
+  margin: 1em;
+}
+
+#heroImage {
+  width: 100%;
+  margin: 2em auto;
+  max-width: 1000px;
+}
+
+#heroImage img {
+  width: 100%;
 }
