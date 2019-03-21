@@ -48,13 +48,13 @@ for (i = 0; i < packages.length; i++) {
   descriptionEl.textContent = packages[i].description;
 
   var authorEl2 = document.getElementById('packageAuthor' + (i + 1));
-  authorEl2.textContent = packages[i].author;
+  authorEl2.textContent = "Author: " + packages[i].author + " ";
 
   var downloadsEl = document.getElementById('packageDownloads' + (i + 1));
-  downloadsEl.textContent = packages[i].downloads;
+  downloadsEl.textContent = "Downloads: " + packages[i].downloads + " ";
 
   var starsEl = document.getElementById('packageStars' + (i + 1));
-  starsEl.textContent = packages[i].stars;
+  starsEl.textContent = "Stars: " + packages[i].stars + " ";
 
   //https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
