@@ -4,12 +4,17 @@ var author = "by: Tyler Shinkle";
 var date = "3/21/2019";
 var heroImage = document.createElement('img');
 heroImage.src = "images/header.png";
-var src = document.getElementById("heroImage");
-src.appendChild(heroImage);
 
+var heroImageEl = document.getElementById("heroImage");
 var titleEl = document.getElementById('title');
 var authorEl = document.getElementById('author');
 var dateEl = document.getElementById('date');
+
+//load onto doc
+titleEl.textContent = title;
+authorEl.textContent = author;
+dateEl.textContent = date;
+heroImageEl.appendChild(heroImage);
 
 //Package info...
 function Package(name, url, description, author, downloads, stars, image) {
@@ -56,11 +61,3 @@ for (i = 0; i < packages.length; i++) {
   imageEl.appendChild(imageItself);
 
 };
-
-
-
-//load onto doc
-titleEl.textContent = title;
-authorEl.textContent = author;
-dateEl.textContent = date;
-heroImage.appendChild(heroImage);
