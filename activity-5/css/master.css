@@ -103,3 +103,7 @@ header {
 #heroImage img {
   width: 100%;
 }
+
+main img {
+  width: 50px;
+}
