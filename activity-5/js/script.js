@@ -75,7 +75,7 @@ for (var i = 0; i < packages.length; i++) {
 };
 
 function openNav() {
-  document.getElementById('myNav').style.width = "60%";
+  document.getElementById('myNav').style.width = "20em";
 }
 
 function closeNav() {
