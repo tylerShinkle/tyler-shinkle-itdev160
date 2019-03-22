@@ -192,7 +192,7 @@ main a:hover {
 }
 
 #spacer {
-  height: 4em;
+  height: 6em;
   width: 100%;
 }
 
@@ -266,6 +266,7 @@ main a:hover {
   height: .125em;
   width: 100%;
   z-index: -1;
+  position: relative;
   top: -70px;
 }
 

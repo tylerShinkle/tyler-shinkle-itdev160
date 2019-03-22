@@ -34,7 +34,7 @@ function Package(name, url, description, author, downloads, stars, image) {
 
 var gitPlus = new Package("Git-Plus", "https://atom.io/packages/git-plus", "Git-Plus allows you to seamlessly add, commit and push without the use of a terminal.", "akonwi", 2411693, 2568, "images/git.png");
 var beautify = new Package("atom-beautify", "https://atom.io/packages/atom-beautify", "The atom-beautify package allows you to clean up your code simply by saving it.", "Glavin001", 6004609, 5046, "images/beautify.png");
-var pigments = new Package("Pigments", "https://atom.io/packages/pigments", "Pigments allows you to easily see how your hex codes will look.", "abe33", 2537742, 3601, "images/pigments.png");
+var pigments = new Package("Pigments", "https://atom.io/packages/pigments", "Pigments allows you to easily see how your color codes will look.", "abe33", 2537742, 3601, "images/pigments.png");
 var packages = [gitPlus, beautify, pigments];
 
 
