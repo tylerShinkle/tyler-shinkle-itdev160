@@ -12,9 +12,9 @@ function Message(to, from, subject, msg) {
 
 
 //creating initial messages and loading them into message array.
-msg1 = new Message("tyler", "bill", "hi", "asdlkfjl;adfj; a;sdlfjk;a df al;kdfj;aldjf al;dfk ja;ldfj l;adfj l;asdjfl;adj fl;ad fj;lajsdfl;asdj fl;ad f");
-msg2 = new Message("tyler", "jill", "hello", "asd;lfkja ;fjk a;dfklj;ald fjl;a fjl;ajsdf ;lajsdf l;jad fl;jasd fl;jkasdflkja dfljkasl;dfjka ;sdfkja l;sdf");
-msg3 = new Message("tyler", "luisa", "Whaddup", "al;dfjk ;adklfj ;afkj ;adfj ;alkjdf ;ald f;asdlkfj ");
+msg1 = new Message("Tyler", "Bill", "Homework", "Hello, I was wondering if you knew what homework was assigned, I missed class.");
+msg2 = new Message("Tyler", "Jill", "Recipe", "Hi, I was wondering if you could send me that brownie recipe? They were excellent. Thanks!");
+msg3 = new Message("Tyler", "Luisa", "Whaddup", "Hey, I was wondering if you wanted to hang after work. Let me know.");
 var messages = [msg1, msg2, msg3];
 
 
@@ -22,8 +22,8 @@ var messages = [msg1, msg2, msg3];
 function init() {
   //get rid of button and send header to top.
   start.style.display = "none";
-  var headerTop = document.getElementById('headerTop');
-  headerTop.style.margin = "1em";
+  var headerContainer = document.getElementById('headerContainer');
+  headerContainer.style.position = "relative";
   // get message container
   var el = document.getElementById('message-container');
   // for every message do ...
@@ -48,6 +48,29 @@ function init() {
     fromEl.appendChild(fromText);
     msgBlock.appendChild(fromEl);
     //for subject
-  }
+    var subjectEl = document.createElement("p");
+    subjectEl.classList.add("msgHeader");
+    var subjectText = document.createTextNode("Subject: " + messages[i].subject);
+    subjectEl.appendChild(subjectText);
+    msgBlock.appendChild(subjectEl);
+    //line break before message.
+    msgBlock.appendChild(document.createElement("br"));
+    //add div for message and append msg text.
+    var msgArea = document.createElement("div");
+    msgArea.classList.add("msgArea");
+    var msgText = document.createTextNode(messages[i].msg);
+    msgArea.appendChild(msgText);
+    msgBlock.appendChild(msgArea);
+    //add reply button to each message.
+    var replyContainer = document.createElement("div");
+    replyContainer.classList.add("replyContainer");
+    var replyButton = document.createElement("button");
+    replyButton.classList.add("replyButton");
+    var replyText = document.createTextNode("Reply");
+    replyButton.appendChild(replyText);
+    replyContainer.appendChild(replyButton);
+    msgBlock.appendChild(replyContainer);
 
+
+  }
 }

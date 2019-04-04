@@ -10,11 +10,15 @@
   <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
 </head>
 
-<header>
-  <h1 id="headerTop">msgr</h1>
-</header>
+
 
 <body>
+  <header>
+    <div id="headerContainer">
+      <h1 id="headerTop">msgr</h1>
+    </div>
+  </header>
+
   <main>
     <div id="buttonContainer">
       <div id="startButton">
@@ -25,7 +29,9 @@
     </section>
 
     <section id="interActContainer">
-      <input id="message-input" type="text" name="msgInput">
+      <div id="message-inputContainer">
+        <textarea id="message-input" type="text" name="msgInput"></textarea>
+      </div>
       <button id="send-button" type="button" name="send-button">Send</button>
       <button id="reply-button" type="button" name="reply-button">Reply</button>
     </section>
