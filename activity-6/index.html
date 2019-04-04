@@ -2,14 +2,38 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <title>msgr</title>
   <meta charset="utf-8">
   <meta name="author" content="Tyler Shinkle">
   <meta name="keywords" content="messanger, sms, msg, messages, email">
-  <title>msgr</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
 </head>
 
-<body>
+<header>
+  <h1 id="headerTop">msgr</h1>
+</header>
 
+<body>
+  <main>
+    <div id="buttonContainer">
+      <div id="startButton">
+        <p>start</p>
+      </div>
+    </div>
+    <section id="message-container" class="messages">
+    </section>
+
+    <section id="interActContainer">
+      <input id="message-input" type="text" name="msgInput">
+      <button id="send-button" type="button" name="send-button">Send</button>
+      <button id="reply-button" type="button" name="reply-button">Reply</button>
+    </section>
+
+  </main>
+
+
+  <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>

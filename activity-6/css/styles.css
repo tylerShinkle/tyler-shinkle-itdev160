@@ -1,0 +1,61 @@
+body {
+  background-color: #4dffff;
+  position: relative;
+  font-family: 'Exo', sans-serif;
+}
+
+#headerTop {
+  text-align: center;
+  font-size: 5em;
+  letter-spacing: .125em;
+  margin-top: 3em;
+}
+
+#interActContainer {
+  display: none;
+}
+
+#buttonContainer {
+  text-align: center;
+  padding-top: 0;
+}
+
+#startButton {
+  background-color: black;
+  color: #4dff;
+  width: 15em;
+  height: 8em;
+  margin: auto;
+}
+
+#startButton p {
+  font-size: 4em;
+  position: relative;
+  top: .25em;
+}
+
+#startButton:hover {
+  cursor: pointer;
+  opacity: .75;
+}
+
+#startButton:active {
+  opacity: .5;
+}
+
+.msgBlock {
+  width: 90%;
+  height: 20em;
+  overflow: auto;
+  background-color: black;
+  margin: auto;
+  padding: .5em;
+}
+
+.msgHeader {
+  color: #4dff;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+}
