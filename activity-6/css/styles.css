@@ -71,11 +71,12 @@ This will be how messages are written and sent. It will hold...
 -and exit button.
 -the message-input input.
 */
-#interActContainer {
+#interActContainer{
   width: 100%;
   height: 100%;
   background-color: hsla(0, 10%, 10%, 0.5);
   position: fixed;
+  top:0;
   z-index: 1;
   padding: 0em;
   display: none;
@@ -84,9 +85,6 @@ This will be how messages are written and sent. It will hold...
 #reply-button {
   width: 100%;
   height: 10%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background-color: transparent;
   border: 1px solid white;
   color: white;
@@ -96,6 +94,7 @@ This will be how messages are written and sent. It will hold...
   font-family: 'Exo', sans-serif;
   font-size: 2em;
   border-radius: 5px;
+  margin-top: 1em;
 }
 
 #reply-button:hover {
@@ -114,17 +113,40 @@ This will be how messages are written and sent. It will hold...
 #message-inputContainer {
   width: 100%;
   height: 100%;
-  position: absolute;
   text-align: center;
-  padding-top: 3em;
+  margin: auto;
+  padding-top: 1em;
 }
 
 #message-input {
   width: 90%;
-  height: 80%;
-  margin: auto;
+  height: 70%;
+  margin: 1em auto;
   overflow: auto;
   resize: none;
+}
+
+#exitMsg{
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Exo', sans-serif;
+  font-size: 2em;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+#msgButtonContainer{
+  width:90%;
+  margin:auto;
+  text-align: center;
 }
 
 .msgBlock {
@@ -132,7 +154,7 @@ This will be how messages are written and sent. It will hold...
   max-height: 30em;
   overflow: auto;
   background-color: hsla(0, 10%, 10%, 0.5);
-  margin: auto;
+  margin: 1em auto;
   padding: .5em;
 }
 

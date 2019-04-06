@@ -1,20 +1,23 @@
 //add eventListener to start button.
 var start = document.getElementById('startButton');
-start.onclick = init;
+start.addEventListener('click',init,false);
 
 //message object constructor...
-function Message(to, from, subject, msg) {
+//add type to differentiate from reply and send...
+function Message(to, from, subject, msg,type) {
   this.to = to;
   this.from = from;
   this.subject = subject;
   this.msg = msg;
+  //s for send, r for reply and i for in...
+  this.type=type;
 }
 
 
 //creating initial messages and loading them into message array.
-msg1 = new Message("Tyler", "Bill", "Homework", "Hello, I was wondering if you knew what homework was assigned, I missed class.");
-msg2 = new Message("Tyler", "Jill", "Recipe", "Hi, I was wondering if you could send me that brownie recipe? They were excellent. Thanks!");
-msg3 = new Message("Tyler", "Luisa", "Whaddup", "Hey, I was wondering if you wanted to hang after work. Let me know.");
+msg1 = new Message("Tyler", "Bill", "Homework", "Hello, I was wondering if you knew what homework was assigned, I missed class.","i");
+msg2 = new Message("Tyler", "Jill", "Recipe", "Hi, I was wondering if you could send me that brownie recipe? They were excellent. Thanks!","i");
+msg3 = new Message("Tyler", "Luisa", "Whaddup", "Hey, I was wondering if you wanted to hang after work. Let me know.","i");
 var messages = [msg1, msg2, msg3];
 
 
@@ -24,6 +27,9 @@ function init() {
   start.style.display = "none";
   var headerContainer = document.getElementById('headerContainer');
   headerContainer.style.position = "relative";
+  // add svg here...this is to compose a new message!!!!!!!!!!!!!!!!!
+  //
+  //
   // get message container
   var el = document.getElementById('message-container');
   // for every message do ...
@@ -68,9 +74,19 @@ function init() {
     replyButton.classList.add("replyButton");
     var replyText = document.createTextNode("Reply");
     replyButton.appendChild(replyText);
+    // add eventListener here... this will call the addMessageHandler...
+    replyButton.addEventListener('click',addMessageHandler,false);
     replyContainer.appendChild(replyButton);
+    //put button in div
     msgBlock.appendChild(replyContainer);
 
 
   }
+}
+
+//addMessageHandler...
+
+function addMessageHandler(){
+  msgWindow=document.getElementById('interActContainer');
+  msgWindow.style.display="block";
 }
