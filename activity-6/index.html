@@ -16,6 +16,12 @@
   <header>
     <div id="headerContainer">
       <h1 id="headerTop">msgr</h1>
+      <div id=boxes class="boxButtons">
+        <h2 id="inButton">in</h2>
+        <h2 id="outButton">out</h2>
+        <h2 id="composeButton">compose</h2>
+      </div>
+
     </div>
   </header>
 
@@ -30,9 +36,16 @@
 
     <section id="interActContainer">
       <div id="message-inputContainer">
-        <p id="toForCreate" class="createHeader"></p>
-        <p id="fromForCreate" class="createHeader"></p>
-        <p id="subjectForCreate" class="createHeader"></p>
+        <div id=headerCreate>
+          <p>
+            <label for="to">To: </label>
+            <input id="toForCreate" class="createHeader">
+          </p>
+          <p>
+            <label for="Subject">Subject: </label>
+            <input id="subjectForCreate" class="createHeader">
+          </p>
+        </div>
         <textarea id="message-input" type="text" name="msgInput"></textarea>
         <div id="msgButtonContainer">
           <button id="send-button" type="button" name="send-button">Send</button>

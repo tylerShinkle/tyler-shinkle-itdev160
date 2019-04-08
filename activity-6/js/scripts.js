@@ -2,14 +2,18 @@
 var start = document.getElementById('startButton');
 start.addEventListener('click', init, false);
 
+//add eventListenerto compose button...
+var compose = document.getElementById('composeButton');
+compose.addEventListener('click', function() {
+  addMessageHandler("o", null);
+}, false);
+
 //message object constructor...
-//add type to differentiate from reply and send...
 function Message(to, from, subject, msg, type) {
   this.to = to;
   this.from = from;
   this.subject = subject;
   this.msg = msg;
-  //s for send, r for reply and i for in...
   this.type = type;
 }
 
@@ -18,18 +22,17 @@ function Message(to, from, subject, msg, type) {
 msg1 = new Message("Tyler", "Bill", "Homework", "Hello, I was wondering if you knew what homework was assigned, I missed class. Also, we're going to test overflow. Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah Blahv Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah", "i");
 msg2 = new Message("Tyler", "Jill", "Recipe", "Hi, I was wondering if you could send me that brownie recipe? They were excellent. Thanks!", "i");
 msg3 = new Message("Tyler", "Luisa", "Whaddup", "Hey, I was wondering if you wanted to hang after work. Let me know.", "i");
+
+//message Array
 var messages = [msg1, msg2, msg3];
-
-
 //When the start button is clicked this will trigger loading the initial messages.
 function init() {
   //get rid of button and send header to top.
   start.style.display = "none";
   var headerContainer = document.getElementById('headerContainer');
   headerContainer.style.position = "relative";
-  // add svg here...this is to compose a new message!!!!!!!!!!!!!!!!!
-  //
-  //
+  var boxes = document.getElementById('boxes');
+  boxes.style.display = "inline-block";
   // get message container
   var el = document.getElementById('message-container');
   // for every message do ...
@@ -75,7 +78,7 @@ function init() {
     //YES!!
     replyButton.value = i;
     //Yes!!
-    var replyText = document.createTextNode(i + "Reply");
+    var replyText = document.createTextNode("Reply");
     replyButton.appendChild(replyText);
     replyContainer.appendChild(replyButton);
     //put button in div
@@ -88,34 +91,77 @@ function init() {
 }
 
 //addMessageHandler...
+//this will open up a window to compose a composition, reploy, etc...
+//the windows will be created differently for replies opposed to compositions.
 
 function addMessageHandler(type, i) {
   //shorthand for buttons
   sendButton = document.getElementById('send-button');
   replyButton = document.getElementById('reply-button');
+  exitButton = document.getElementById('exit-button');
+  //shorthand for textArea...
   messageInput = document.getElementById('message-input');
   msgWindow = document.getElementById('interActContainer');
-  //load header text...
   to = document.getElementById('toForCreate');
-  toText = document.createTextNode("To: " + messages[i].to);
-  to.appendChild(toText);
-  from = document.getElementById('fromForCreate');
-  fromText = document.createTextNode("From: " + messages[i].from);
-  from.appendChild(fromText);
   subject = document.getElementById('subjectForCreate');
-  subjectText = document.createTextNode("Subject: " + messages[i].subject);
-  subject.appendChild(subjectText);
   //assign functions to buttons...
-  exitButton = document.getElementById('exit-button');
+  //Exit
+  //close window and reset header overlay elements...
   exitButton.addEventListener('click', function() {
     msgWindow.style.display = "none";
-    toText.nodeValue = "";
-    fromText.nodeValue = "";
-    subjectText.nodeValue = "";
+    to.setAttribute("value", "");
+    subject.setAttribute("value", "");
   }, false);
-  if (type = "r") {
-    msgWindow.style.display = "block";
-    sendButton.style.display = "none";
+  //sendButton
+  sendButton.addEventListener("click", function() {
+    //construct new message object.
+    var to = document.getElementById("toForCreate").value;
+    var from = "example@gmail.com";
+    var subject = document.getElementById("subjectForCreate").value;
+    var msg = document.getElementById('message-input').value;
+    var type = "o";
+    var message = new Message(to, from, subject, msg, type);
+    //check if message is empty or not...
+    if (message.msg != '') {
+      //add message to array.
+      messages.push(message);
+      //clear overlay elements
+      document.getElementById('toForCreate').value = "";
+      document.getElementById('subjectForCreate').value = "";
+      document.getElementById('message-input').value = "";
+      //clear message-container
+      var el = document.getElementById('message-container');
+      el.innerHTML = "";
+      // reload arrays...
+      init();
+      //clear overlay
+      //close overlay
+      msgWindow.style.display = "none";
+    } else {
+      alert("Messages cannot be empty");
+    }
+  }, false);
+  /*
+  replyButton.addEventListener('click', function() {
+    var message = new Message(to, from, subject, msg, type);
+    messages.push(message);
+  }, false);
+  */
+  //If the message is a reply, it will call this funciton with type:r,
+  //The window will then open with the headers set, and only the reply
+  //(not send) button will be available.
+  switch (type) {
+    case 'r':
+      msgWindow.style.display = "block";
+      sendButton.style.display = "none";
+      //load header text...
+      to.setAttribute("value", messages[i].from);
+      subject.setAttribute("value", messages[i].subject);
+    case 'o':
+      msgWindow.style.display = "block";
+      replyButton.style.display = "none";
+      sendButton.style.display = "block";
+
 
   }
 }
