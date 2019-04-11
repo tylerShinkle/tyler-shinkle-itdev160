@@ -17,7 +17,6 @@ function Message(to, from, subject, msg, type) {
   this.type = type;
 }
 
-
 //creating initial messages and loading them into message array.
 msg1 = new Message("Tyler", "Bill", "Homework", "Hello, I was wondering if you knew what homework was assigned, I missed class. Also, we're going to test overflow. Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah BlahBlah Blah Blahv Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlah Blah BlahBlah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah", "i");
 msg2 = new Message("Tyler", "Jill", "Recipe", "Hi, I was wondering if you could send me that brownie recipe? They were excellent. Thanks!", "i");
@@ -87,7 +86,42 @@ function init() {
     replyButton.addEventListener('click', function() {
       addMessageHandler('r', this.value);
     }, false);
+    //add class based on type...
+    if (messages[i].type != "i") {
+      msgBlock.classList.add("out-message");
+    } else {
+      msgBlock.classList.add("in-message");
+    }
   }
+}
+
+
+function createMessageBlock(type) {
+  //construct new message object.
+  var to = document.getElementById("toForCreate").value;
+  var from = "example@gmail.com";
+  var subject = document.getElementById("subjectForCreate").value;
+  var msg = document.getElementById('message-input').value;
+  var type = type;
+  var message = new Message(to, from, subject, msg, type);
+  //check if message is empty or not...
+  if (message.msg != '') {
+    //add message to array.
+    messages.push(message);
+    //clear overlay elements
+    document.getElementById('toForCreate').value = "";
+    document.getElementById('subjectForCreate').value = "";
+    document.getElementById('message-input').value = "";
+    //clear message-container
+    var el = document.getElementById('message-container');
+    el.innerHTML = "";
+    // reload arrays...
+    init();
+    //close overlay
+    msgWindow.style.display = "none";
+  } else {
+    alert("Messages cannot be empty");
+  };
 }
 
 //addMessageHandler...
@@ -111,57 +145,28 @@ function addMessageHandler(type, i) {
     msgWindow.style.display = "none";
     to.setAttribute("value", "");
     subject.setAttribute("value", "");
+    document.getElementById('message-input').value = "";
   }, false);
   //sendButton
-  sendButton.addEventListener("click", function() {
-    //construct new message object.
-    var to = document.getElementById("toForCreate").value;
-    var from = "example@gmail.com";
-    var subject = document.getElementById("subjectForCreate").value;
-    var msg = document.getElementById('message-input').value;
-    var type = "o";
-    var message = new Message(to, from, subject, msg, type);
-    //check if message is empty or not...
-    if (message.msg != '') {
-      //add message to array.
-      messages.push(message);
-      //clear overlay elements
-      document.getElementById('toForCreate').value = "";
-      document.getElementById('subjectForCreate').value = "";
-      document.getElementById('message-input').value = "";
-      //clear message-container
-      var el = document.getElementById('message-container');
-      el.innerHTML = "";
-      // reload arrays...
-      init();
-      //clear overlay
-      //close overlay
-      msgWindow.style.display = "none";
-    } else {
-      alert("Messages cannot be empty");
-    }
-  }, false);
-  /*
-  replyButton.addEventListener('click', function() {
-    var message = new Message(to, from, subject, msg, type);
-    messages.push(message);
-  }, false);
-  */
-  //If the message is a reply, it will call this funciton with type:r,
-  //The window will then open with the headers set, and only the reply
-  //(not send) button will be available.
+  sendButton.addEventListener("click", createMessageBlock, false);
+  //replyButton
+  replyButton.addEventListener("click", createMessageBlock, false);
   switch (type) {
     case 'r':
       msgWindow.style.display = "block";
       sendButton.style.display = "none";
+      replyButton.style.display = "block";
       //load header text...
       to.setAttribute("value", messages[i].from);
       subject.setAttribute("value", messages[i].subject);
+      break;
     case 'o':
       msgWindow.style.display = "block";
       replyButton.style.display = "none";
       sendButton.style.display = "block";
-
-
+      break;
+    default:
+      alert("something went wrong!");
+      break;
   }
 }
