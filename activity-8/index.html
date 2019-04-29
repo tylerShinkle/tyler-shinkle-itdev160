@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>share.io</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1 class=header-title>share.io</h1>
+    <div class="header-menu">
+      <button id="new-button">+</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="display-content">
+
+    </section>
+  </main>
+
+  <footer id="mainFooter">
+    &copy; 2019
+  </footer>
+
+
+  <!--hidden modal-->
+  <div class="modal" id="modal-dialog">
+    <section>
+      <h2>Title</h2>
+      <input type="text" id="edit-title-text">
+      <span id="edit-title-message"></span>
+    </section>
+    <section>
+      <h2>Content</h2>
+      <textarea id="edit-content-text"></textarea>
+      <span id="edit-content-message"></span>
+    </section>
+    <footer>
+      <button type="button" id="cancel-button">cancel</button>
+      <button type="button" id="save-button">save</button>
+    </footer>
+  </div>
+  <div id="modal-backdrop"></div>
+  <script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+</body>
+
+</html>
