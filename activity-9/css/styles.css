@@ -51,6 +51,8 @@ main {
   right: .125em;
   width: 100%;
   margin-left: 1em;
+  max-width: 7em;
+  word-wrap: break-word;
 }
 
 #sidebar ul li:hover {
