@@ -10,26 +10,43 @@
 </head>
 
 <body>
-  <header id="main-header">
-    <h1>Good Quotes</h1>
-  </header>
+
   <main>
     <section id="sidebar">
       <ul id="nav-container">
       </ul>
     </section>
-    <section id="post-container">
-      <section id="intro">
-        <h2>Welcome to Good Quotes</h2>
-        <p>Need an inspiring quote? Select a topic from the menu!</p>
-        <blockquote>
-          &quot;A quotation is a handy thing to have about,
-          saving one the trouble of thinking for oneself,
-          always a laborious business.&quot;
-        </blockquote>
-        <span class="author">A.A. Milne</span>
-      </section>
+    <!--modal-->
+    <section id="modal">
+      <div id=modalContent>
+        <label for"title">Title</label>
+        <input type="text" name="title" value="" id="newTitle">
+        <label for="author">Author</label>
+        <input type="text" name="quote" value="" id="newAuthor">
+        <label for="quote">Quote</label>
+        <textarea name="newQuote"></textarea>
+        <div id="submitModal" class="modalButton">Submit</div>
+        <div id="exitModal" class="modalButton">Cancel</div>
+      </div>
     </section>
+    <div id="flex-column">
+      <header id="main-header">
+        <div id="filler"></div>
+        <h1>Good Quotes</h1>
+      </header>
+      <section id="post-container">
+        <section id="intro">
+          <h2>Welcome to Good Quotes</h2>
+          <p>Need an inspiring quote? Select a topic from the menu!</p>
+          <blockquote>
+            A quotation is a handy thing to have about,
+            saving one the trouble of thinking for oneself,
+            always a laborious business.
+          </blockquote>
+          <span class="author">A.A. Milne</span>
+        </section>
+      </section>
+    </div>
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

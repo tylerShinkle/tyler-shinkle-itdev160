@@ -1,4 +1,4 @@
-//test --> $("p").css("color", "red");
+//test --> $("p").css("color", "red"); starts off at length 5
 var data = [{
     id: 1,
     title: 'Time',
@@ -34,6 +34,7 @@ var data = [{
 var $nav = $('#nav-container');
 var $intro = $('#intro');
 var $posts = $('#post-container');
+var $side = $('#sidebar');
 
 function initPosts() {
   for (var i = 0; i < data.length; i++) {
@@ -79,7 +80,10 @@ function initPosts() {
 
   //create and append modal button to sidebar...
   $addQuote = $('<div id="addQuote">+ Add</div>');
-  $nav.append($addQuote);
+  $side.append($addQuote);
+
+  //test
+
 }
 
 initPosts();

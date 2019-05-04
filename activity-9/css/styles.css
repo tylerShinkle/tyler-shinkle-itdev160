@@ -11,23 +11,35 @@ main {
   flex: 1;
 }
 
+#flex-column {
+  flex-direction: column;
+  width: 100%;
+}
+
 #main-header {
   background-color: #23282d;
+  height: 4em;
   width: 100%;
   padding: 0;
+  text-align: center;
+  padding-top: 1.75em;
 }
 
 #main-header h1 {
-  color: #fff;
-  font-size: 1em;
-  text-align: center;
+  color: white;
+  margin: 0;
   font-size: 1.5em;
 }
 
 #sidebar {
-  flex: 0 0 8em;
+  flex: 0 0 10em;
   font-size: 1.25em;
-  padding-top: 1em;
+  padding-top: 6em;
+  position: relative;
+}
+
+#sidebar ul {
+  width: 100%;
   position: relative;
 }
 
@@ -35,19 +47,24 @@ main {
   color: black;
   padding: 0 0 10px 0;
   list-style-type: none;
+  position: relative;
+  right: .125em;
   width: 100%;
+  margin-left: 1em;
 }
 
 #sidebar ul li:hover {
   cursor: pointer;
-  background-color: black;
-  color: white;
+  color: #707070;
+  text-decoration: underline;
 }
 
 #post-container {
   flex: 1;
   background-color: #eee;
-  padding: 20px;
+  padding: .5em;
+  text-align: center;
+  height: calc(100% - 5.75em);
 }
 
 #intro {
@@ -79,12 +96,57 @@ blockquote:before, blockquote:after {
   border-radius: 90px;
   text-align: center;
   position: absolute;
-  right: 2em;
   bottom: 2em;
+  left: 3em;
 }
 
 #addQuote:hover, #addQuote:active {
-  color: white;
-  background-color: black;
+  color: #707070;
   cursor: pointer;
+  border: 1px solid #707070;
+}
+
+#modal {
+  font-size: 1.25em;
+  position: fixed;
+  width: 10em;
+  z-index: 2;
+  background-color: #23282d;
+  color: white;
+  text-align: center;
+  height: 100%;
+  display: non;
+}
+
+input {
+  width: 10em;
+  display: block;
+  margin: 0em auto 1em auto;
+}
+
+textarea {
+  width: 10em;
+  height: 15em;
+  margin: auto;
+  display: block;
+}
+
+.modalButton {
+  display: block;
+  margin: 1em auto;
+  border: 1px solid white;
+  border-radius: 1em;
+  width: 7em;
+}
+
+.modalButton:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+#modalContent {
+  position: relative;
+  top: 5em;
 }
