@@ -37,6 +37,7 @@ var $posts = $('#post-container');
 var $side = $('#sidebar');
 
 function initPosts() {
+  $nav.html("");
   for (var i = 0; i < data.length; i++) {
     //create elements
     var postId = 'post-' + data[i].id;
@@ -81,7 +82,36 @@ function initPosts() {
   //create and append modal button to sidebar...
   $addQuote = $('<div id="addQuote">+ Add</div>');
   $side.append($addQuote);
+  //this button will open the modal...
+  $modal = ('#modal');
+  $addQuote.click(function() {
+    $('#modal').css('display', 'block');
+  });
+  //here are the buttons for the modal...
+  $submit = $('#submitModal');
+  $cancel = $('#exitModal');
+  //there event listeners...
+  $cancel.click(function() {
+    $("#newTitle").val("");
+    $("#newQuote").val("");
+    $('#newAuthor').val("");
+    $('#modal').css('display', 'none');
+  });
 
+  $submit.click(function() {
+    newLength = data.length + 1;
+    data.push({
+      id: newLength,
+      title: $("#newTitle").val(),
+      body: $("#newQuote").val(),
+      author: $("#newAuthor").val()
+    });
+    $("#newTitle").val("");
+    $("#newQuote").val("");
+    $('#newAuthor').val("");
+    initPosts();
+    $('#modal').css('display', 'none');
+  });
   //test
 
 }

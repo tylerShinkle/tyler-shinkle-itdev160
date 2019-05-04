@@ -115,7 +115,7 @@ blockquote:before, blockquote:after {
   color: white;
   text-align: center;
   height: 100%;
-  display: non;
+  display: none;
 }
 
 input {
